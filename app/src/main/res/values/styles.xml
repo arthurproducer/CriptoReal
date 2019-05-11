@@ -1,0 +1,64 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name= "colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:textColorPrimary">@color/textColorPrimary</item>
+        <item name="android:actionOverflowButtonStyle">@style/OverFlow</item>
+    </style>
+
+<!--Necessário para mudar o ícone do menu-->
+    <style name="OverFlow" parent="@android:style/Widget.Holo.ActionButton.Overflow">
+        <item name="android:src">@drawable/min_moedas</item>
+    </style>
+
+    <style name="botaoPadrao">
+        <item name="colorButtonNormal">#00020D</item>
+        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="colorControlHighlight">#ccccb3</item>
+    </style>
+
+    <style name="botaoInterno">
+        <item name="colorButtonNormal">@color/fundo_btn</item>
+        <item name="android:textColor">@color/textColorPrimary</item>
+    </style>
+
+    <style name="campostextedit">
+        <item name="android:textColor">@color/textColorforEdit</item>
+        <item name="android:textColorHint">@color/textColorSecundary</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Divider">
+        <item name="android:layout_width">150dp</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/divisor</item> </style>
+    <!--BOTÃO COR CARLOS #00E8B1-->
+
+    <style name="Widget.Button.Toggle" parent="android:Widget">
+        <item name="android:background">@drawable/ic_toggle_bg</item>
+        <item name="android:disabledAlpha">?android:attr/disabledAlpha</item>
+    </style>
+
+    <style name="toggleButton"  parent="@android:style/Theme.Black">
+        <item name="android:buttonStyleToggle">@style/Widget.Button.Toggle</item>
+        <item name="android:textOn"></item>
+        <item name="android:textOff"></item>
+    </style>
+
+    <style name="Dados_cripto">
+        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+
+    <!--
+    #002D56 azul perfeito
+    <item name= "android:itemBackground">@android:color/white</item>
+    <item namoe android:textColor">@android:color/black</item>
+    !-->
+</resources>

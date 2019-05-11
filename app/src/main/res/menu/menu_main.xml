@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="none">
+        <item
+            android:id="@+id/item_politica"
+            android:icon="@drawable/ic_action_document"
+            android:title="@string/item_politica" />
+        <item
+            android:id="@+id/item_pessoas"
+            android:icon="@drawable/ic_person_add_white"
+            android:title="@string/item_pessoas" />
+        <item
+            android:id="@+id/item_conta"
+            android:icon="@drawable/ic_account_circle"
+            android:title="@string/item_conta" />
+    </group>
+    <group android:id="@+id/padrao" android:checkableBehavior="none">
+        <item
+            android:id="@+id/item_sair"
+            android:icon="@drawable/ic_action_exit"
+            android:title="@string/item_sair" />
+    </group>
+<!--
+      <item
+            android:id="@+id/item_problema"
+            android:icon="@drawable/ic_report_problem"
+            android:title="@string/item_problema" />
+   <item
+            android:id="@+id/item_encerrar"
+            android:icon="@drawable/ic_delete"
+            android:title="@string/item_encerrar" />
+  <item
+            android:id="@+id/item_pesquisa"
+            android:icon="@drawable/ic_search"
+            android:title="Pesquisa" />
+-->
+</menu>

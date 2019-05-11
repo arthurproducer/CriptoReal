@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimaryDark"
+    android:orientation="vertical"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent">
+
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginEnd="4dp"
+            android:background="@color/fundo_fundo_cinza"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="0dp"
+            android:layout_height="90dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/fundo_cinza"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textCap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:text="Cap. Mercado - "
+            android:theme="@style/Dados_cripto"
+            app:layout_constraintStart_toStartOf="@+id/view"
+            app:layout_constraintTop_toTopOf="@+id/view" />
+
+        <TextView
+            android:id="@+id/textCapResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:theme="@style/Dados_cripto"
+            app:layout_constraintStart_toEndOf="@+id/textCap"
+            app:layout_constraintTop_toTopOf="@+id/view" />
+
+        <TextView
+            android:id="@+id/textCirculation"
+            android:layout_width="wrap_content"
+            android:layout_height="19dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Moedas em Circulação - "
+            android:theme="@style/Dados_cripto"
+            app:layout_constraintStart_toStartOf="@+id/view"
+            app:layout_constraintTop_toBottomOf="@+id/textCap" />
+
+        <TextView
+            android:id="@+id/textCirculationResult"
+            android:layout_width="wrap_content"
+            android:layout_height="19dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:theme="@style/Dados_cripto"
+            app:layout_constraintStart_toEndOf="@+id/textCirculation"
+            app:layout_constraintTop_toBottomOf="@+id/textCap" />
+
+        <TextView
+            android:id="@+id/textMax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Limite - "
+            android:theme="@style/Dados_cripto"
+            app:layout_constraintStart_toStartOf="@+id/view"
+            app:layout_constraintTop_toBottomOf="@+id/textCirculation" />
+
+        <TextView
+            android:id="@+id/textMaxResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:theme="@style/Dados_cripto"
+            app:layout_constraintStart_toEndOf="@+id/textMax"
+            app:layout_constraintTop_toBottomOf="@+id/textCirculation" />
+
+        <TextView
+            android:id="@+id/text24h"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:text="- 24 horas"
+            android:theme="@style/Dados_cripto"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textCap"
+            app:layout_constraintEnd_toEndOf="@+id/view" />
+
+        <TextView
+            android:id="@+id/text24hResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:theme="@style/Dados_cripto"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textCap"
+            app:layout_constraintEnd_toStartOf="@+id/text24h" />
+
+        <TextView
+            android:id="@+id/text1h"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:text="- 1 hora"
+            android:theme="@style/Dados_cripto"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textCirculation"
+            app:layout_constraintEnd_toEndOf="@+id/view" />
+
+        <TextView
+            android:id="@+id/text1hResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:theme="@style/Dados_cripto"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textCirculation"
+            app:layout_constraintEnd_toStartOf="@+id/text1h" />
+
+        <TextView
+            android:id="@+id/text7dias"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:text="- 7 dias"
+            android:theme="@style/Dados_cripto"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textMax"
+            app:layout_constraintEnd_toEndOf="@+id/view" />
+
+        <TextView
+            android:id="@+id/text7diasResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:textColor="@android:color/holo_blue_bright"
+            android:theme="@style/Dados_cripto"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textMax"
+            app:layout_constraintEnd_toStartOf="@+id/text7dias" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context="br.com.criptoreal.fragment.ConversorFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <View
+        android:id="@+id/viewFundo"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/alturaBemvindoUsuario"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/viewDivisorVerde"
+        android:layout_width="354dp"
+        android:layout_height="3dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/colorSecondary"
+        app:layout_constraintBottom_toBottomOf="@+id/viewFundo"
+        app:layout_constraintEnd_toEndOf="@+id/viewFundo"
+        app:layout_constraintStart_toStartOf="@+id/imgFotoUsuario" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imgFotoUsuario"
+        android:layout_width="@dimen/larguraFotoPerfilFragment"
+        android:layout_height="@dimen/alturaFotoPerfilFragment"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/viewFundo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.389" />
+
+    <!--android:src="@drawable/usuario"-->
+
+    <TextView
+        android:id="@+id/textNomeUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:text="Nome do Usuario"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/viewFundo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.175"
+        app:layout_constraintStart_toEndOf="@+id/imgFotoUsuario"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textRealDolar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Conversor de Real/Dolar em criptomoedas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewDivisorVerde" />
+
+    <View
+        android:id="@+id/viewRealDolar"
+        android:layout_width="wrap_content"
+        android:layout_height="329dp"
+        android:layout_marginTop="24dp"
+        android:background="@color/fundo_cinza"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textRealDolar" />
+
+    <EditText
+        android:id="@+id/editValorDigitado"
+        android:layout_width="322dp"
+        android:layout_height="38dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/formatos"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="0"
+        android:inputType="numberDecimal"
+        android:textColor="@color/textColorforEdit"
+        android:theme="@style/campostextedit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/viewRealDolar" />
+
+    <TextView
+        android:id="@+id/textMoedaDigitada"
+        android:layout_width="112dp"
+        android:layout_height="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/formatos"
+        android:gravity="center"
+        android:theme="@style/campostextedit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editValorDigitado" />
+
+
+    <TextView
+        android:id="@+id/textMoedaEscolhida"
+        android:layout_width="112dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/formatos"
+        android:gravity="center"
+        android:theme="@style/campostextedit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editValorDigitado" />
+
+    <TextView
+        android:id="@+id/textResultado"
+        android:layout_width="187dp"
+        android:layout_height="38dp"
+        android:layout_marginBottom="48dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/formatos"
+        android:gravity="center"
+        android:hint="Resultado"
+        android:theme="@style/campostextedit"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/viewRealDolar"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <Button
+        android:id="@+id/btnConverter"
+        android:layout_width="126dp"
+        android:layout_height="38dp"
+        android:layout_marginBottom="48dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginStart="28dp"
+        android:text="Converter"
+        android:theme="@style/botaoInterno"
+        app:layout_constraintBottom_toBottomOf="@+id/viewRealDolar"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgInversao"
+        android:layout_width="39dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/inversao"
+        app:layout_constraintBottom_toTopOf="@+id/textResultado"
+        app:layout_constraintEnd_toStartOf="@+id/imgMoedaEscolhida"
+        app:layout_constraintHorizontal_bias="0.431"
+        app:layout_constraintStart_toEndOf="@+id/imgMoedaDigitada"
+        app:layout_constraintTop_toBottomOf="@+id/editValorDigitado"
+        app:layout_constraintVertical_bias="0.721" />
+
+    <ImageView
+        android:id="@+id/imgMoedaDigitada"
+        android:layout_width="112dp"
+        android:layout_height="110dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/viewRealDolar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editValorDigitado"
+        app:layout_constraintVertical_bias="0.37" />
+
+    <ImageView
+        android:id="@+id/imgMoedaEscolhida"
+        android:layout_width="112dp"
+        android:layout_height="110dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/viewRealDolar"
+        app:layout_constraintEnd_toEndOf="@+id/viewRealDolar"
+        app:layout_constraintTop_toBottomOf="@+id/editValorDigitado"
+        app:layout_constraintVertical_bias="0.37" />
+
+
+</android.support.constraint.ConstraintLayout>

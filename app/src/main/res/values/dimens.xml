@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="alturaFotoPerfil">113dp</dimen>
+    <dimen name="larguraFotoPerfil">116dp</dimen>
+    <dimen name="alturaFotoPerfilFragment">89dp</dimen>
+    <dimen name="larguraFotoPerfilFragment">92dp</dimen>
+    <dimen name="alturaBemvindoUsuario">116dp</dimen>
+    <dimen name="comprimentoModulos">125dp</dimen>
+    <dimen name="btn_interno_width">40dp</dimen>
+    <dimen name="btn_interno_height">38dp</dimen>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@android:id/progress">
+        <clip>
+        <shape>
+            <gradient
+                android:startColor="@color/progressbar"
+                android:centerColor="@color/progressbar"
+                android:endColor="@color/progressbar"
+                />
+        </shape>
+    </clip>
+    </item>
+</layer-list>

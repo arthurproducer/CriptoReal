@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">CriptoReal</string>
+    <string name="app_noTitle"></string>
+    <string name="botao_cadastrar">Cadastrar</string>
+    <string name="botao_validar">Validar</string>
+    <string name="btn_logar">Logar</string>
+    <string name="texto_cadastre">Não tem conta? Cadastre-se</string>
+    <string name="item_sair">Sair</string>
+    <string name="item_conta">Editar Conta</string>
+    <string name="item_config">Configurações</string>
+    <string name="navigation_drawer_open">Abrir</string>
+    <string name="navigation_drawer_close">Fechar</string>
+    <string name="item_problema">Relatar um Problema</string>
+    <string name="item_politica">Politica de privacidade</string>
+    <string name="item_pessoas">Convidar Pessoas</string>
+    <string name="item_encerrar">Encerrar Conta</string>
+    <string name="facebook_app_id">1137645059731968</string>
+    <string name="facebook_login_procol_sheme">fb1137645059731968</string>
+    <string name="url_politicas">"https://criptoreal.000webhostapp.com/site/index.html"</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="intro">. Edite suas configurações de conta e altere sua senha aqui.</string>
+</resources>

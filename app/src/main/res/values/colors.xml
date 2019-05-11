@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#00022d</color>
+    <color name="colorPrimaryDark">#00020d</color>
+    <color name="colorAccent">#5dbcd2</color>
+    <color name="colorSecondary">#28502b</color>
+    <color name="colorSecondaryLight">#537d54</color>
+    <color name="fundo_logo">#dcddd8</color>
+    <color name="textColorPrimary">#ffffff</color>
+    <color name="textColorforEdit">#000000</color>
+    <color name="textColorSecundary">#a1a2a4</color>
+    <color name="fundo_cinza">#1b1b1b</color>
+    <color name="fundo_fundo_cinza">#0C1019</color>
+    <color name="progressbar">#92d14f</color>
+    <color name="cinza">#cccccc</color>
+    <color name="verde_claro">#9f9f60</color>
+    <color name="divisor">#FFFFFF</color>
+    <color name="fundo_btn">#006837</color>
+
+
+    <!--
+    <color name="colorSecondary">@android:color/holo_green_dark</color>
+    #6d8f95 Accent
+     #FFBF00
+     #b18904
+     #4d4d33
+     #9f9f60
+     #ccccb3
+     	#00082D
+#E8F5E9
+     #ffffff
+     #dcddd8
+    !-->
+</resources>
