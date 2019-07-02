@@ -10,6 +10,12 @@ import com.google.firebase.auth.FirebaseAuth;
 import br.com.criptoreal.R;
 import br.com.criptoreal.config.ConfiguracaoFirebase;
 
+/**
+ * Classe que representa o primeiro contato do usuário com o app.
+ * Verifica seu status no aplicativo e direciona o usuário para outros locais do aplicativo como a Tela Principal ou a Tela de Login.
+ * @author Arthur Sales
+ */
+
 public class SplashActivity extends AppCompatActivity {
 
     private FirebaseAuth autenticacao;
@@ -26,6 +32,7 @@ public class SplashActivity extends AppCompatActivity {
        verificarUsuarioLogado();
         super.onResume();
     }
+
 
     private void verificarUsuarioLogado(){
         autenticacao = ConfiguracaoFirebase.getFirebaseAuth();

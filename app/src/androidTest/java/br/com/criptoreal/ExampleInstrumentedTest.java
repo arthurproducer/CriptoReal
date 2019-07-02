@@ -1,4 +1,4 @@
-package br.com.criptoreal.cursoandroid.criptoreal;
+package br.com.criptoreal;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("br.com.criptoreal.cursoandroid.criptoreal", appContext.getPackageName());
+        assertEquals("br.com.criptoreal", appContext.getPackageName());
     }
 }

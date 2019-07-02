@@ -1,4 +1,4 @@
-package br.com.criptoreal.cursoandroid.criptoreal;
+package br.com.criptoreal;
 
 import org.junit.Test;
 

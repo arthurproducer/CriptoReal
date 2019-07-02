@@ -64,6 +64,10 @@ import br.com.criptoreal.helper.Preferencias;
 import static br.com.criptoreal.helper.Constantes.ENDERECO_FOTO_PADRAO;
 import static br.com.criptoreal.helper.Constantes.URL_POLITICAS_PRIVACIDADE;
 
+/**
+ * Classe responsável por todas as etapas do formulário de cadastro.
+ * @author Arthur Sales
+ */
 public class CadastroUsuarioActivity extends AppCompatActivity implements View.OnClickListener{
 
     //Constante para rastrear a intent do seletor de imagens
@@ -174,12 +178,18 @@ public class CadastroUsuarioActivity extends AppCompatActivity implements View.O
         }
         else if(view == tirarFoto){
 
+            //ISSO É NECESSÁRIO?
+
                     if(Permissao.validaPermissoes(1,this, permissoesNecessarias)){
                         tirarFoto();//Somente entra aqui quando as permissões já foram permitidas
                     }
         }
     }
 
+
+    /**
+     * Informa os campos obrigatórios a serem preenchidos pelo usuário.
+     */
     public void verificaCampoObrigatorio(){
 
         if(nome.getText().length() != 0 && email.getText().length() != 0 && senha.getText().length() != 0 && confsenha.getText().length() != 0) {
@@ -207,6 +217,11 @@ public class CadastroUsuarioActivity extends AppCompatActivity implements View.O
         }
     }
 
+    /**
+     * A foto do usuário é recuperada e salva no Storage.
+     * Apenas no caso em que o usuário carrega ou tira uma foto.
+     * @param uid id do storage onde estão as fotos do usuário logado.
+     */
     public void uploadFotoPerfil(final String uid) {
         /*
         //VERIFICAR
@@ -254,6 +269,10 @@ public class CadastroUsuarioActivity extends AppCompatActivity implements View.O
                 });
     }
 
+
+    /**
+     * Aqui onde ocorre o Cadastramento do usuário após ele fornecer todos os dados.
+     */
     public void cadastrarUsuario(){
 
             autenticacao = ConfiguracaoFirebase.getFirebaseAuth();
@@ -272,7 +291,7 @@ public class CadastroUsuarioActivity extends AppCompatActivity implements View.O
 
 
                             if (filePatch != null) {//O método da foto só será chamado caso o usuário tenha colocado uma foto,
-                                uploadFotoPerfil(autenticacao.getUid());//VRIFICARE
+                                uploadFotoPerfil(autenticacao.getUid());
 
                             } else {
                                 usuario.setEnderecofoto(ENDERECO_FOTO_PADRAO);
@@ -308,6 +327,9 @@ public class CadastroUsuarioActivity extends AppCompatActivity implements View.O
             });
     }
 
+    /**
+     * Método acionado quando o usuário opta por carregar uma foto da galeria.
+     */
     public void mostreArquivoEscolhido(){
         Intent intent = new Intent();
         intent.setType("image/*");
@@ -315,12 +337,19 @@ public class CadastroUsuarioActivity extends AppCompatActivity implements View.O
         startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST);
     }
 
+    /**
+     * Método utilizado quando o usuário opta por tirar uma foto pela câmera.
+     */
     public void tirarFoto(){
         //View view
             Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
         startActivityForResult(intent,0);
         }
 
+
+    /**
+     *
+     */
     @Override
     protected  void onActivityResult(int requestCode, int resultCode, Intent data){
         super.onActivityResult(requestCode, resultCode ,data);
@@ -344,24 +373,33 @@ public class CadastroUsuarioActivity extends AppCompatActivity implements View.O
 
     }
 
+
+    /**
+     * Necessário para que tanto o arquivo salvo no Storage quanto o do database tenham o mesmo nome.
+     */
     public String getFileExtension(Uri uri){
-        //Necessário para que tanto o arquivo salvo no Storage quanto o do database tenham o mesmo nome
         ContentResolver cR = getContentResolver();
         MimeTypeMap mime = MimeTypeMap.getSingleton();
         return mime.getExtensionFromMimeType(cR.getType(uri));
     }
 
+
+    /**
+     * Utilizo está classe para pegar o Uri da imagem, necessário no momento do Upload.
+     */
     public Uri getImageUri(Context inContext, Bitmap inImage){
-        //Utilizo está classe para pegar o Uri da imagem, necessário no momento do Upload
         ByteArrayOutputStream bytes = new ByteArrayOutputStream();
         inImage.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
         String path = MediaStore.Images.Media.insertImage(inContext.getContentResolver(),inImage,"foto",null);
         return Uri.parse(path);
     }
 
+
+    /**
+     * Tratando permissão para tirar foto.
+     */
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults){
-        //Tratando permissões negadas
 
         super.onRequestPermissionsResult(requestCode,permissions,grantResults);
         for(int resultado : grantResults){
@@ -376,8 +414,11 @@ public class CadastroUsuarioActivity extends AppCompatActivity implements View.O
         }
     }
 
+
+    /**
+     * Mensagem exibida quando a premissão foi negada.
+     */
     public void alertaValidacaoPermissao(){
-        //Mensagem exibida quando a premissão foi negada
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Permissões Negadas");
         builder.setMessage("Para tirar foto pelo app, é necessário aceitar as permissões! Caso as tenha negado deve ir na configurações de seu dispositivo e altera-las novamente!");

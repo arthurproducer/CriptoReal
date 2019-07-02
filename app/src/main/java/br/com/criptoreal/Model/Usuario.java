@@ -7,6 +7,10 @@ import com.google.firebase.database.Exclude;
 
 import br.com.criptoreal.config.ConfiguracaoFirebase;
 
+/**
+ * Classe {@link Usuario} que representa um usuário real do aplicativo.
+ * @author Arthur Sales
+ */
 public class Usuario {
 
     private String id;
@@ -21,6 +25,18 @@ public class Usuario {
 
     public Usuario() { //Existe apenas para que o Firebase possa salvar corretamente
 
+    }
+
+    ///Construtor somente usado no teste
+    public Usuario(String id, String nome, String email, String senha, String confsenha, String sexo, String storage_id, String enderecofoto) {
+        this.id = id;
+        this.nome = nome;
+        this.email = email;
+        this.senha = senha;
+        this.confsenha = confsenha;
+        this.sexo = sexo;
+        this.storage_id = storage_id;
+        this.enderecofoto = enderecofoto;
     }
 
     public void salvar(){
