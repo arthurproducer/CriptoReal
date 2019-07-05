@@ -50,7 +50,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Sexo:"
+        android:text="@string/sex"
         android:textColor="@color/textColorPrimary"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/editValidaSenhaAtual"
@@ -76,7 +76,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:buttonTint="@color/divisor"
-            android:text="Feminino"
+            android:text="@string/sexFemale"
             android:textColor="@color/textColorPrimary" />
         <RadioButton
             android:id="@+id/radioBtnMasculino"
@@ -85,7 +85,7 @@
             android:layout_weight="1"
             android:buttonTint="@color/divisor"
             android:textColor="@color/textColorPrimary"
-            android:text="Masculino" />
+            android:text="@string/sexMale" />
 
     </RadioGroup>
 
@@ -100,7 +100,7 @@
         android:layout_marginTop="16dp"
         android:background="@drawable/formatos"
         android:ems="10"
-        android:hint="Senha Atual"
+        android:hint="@string/hintOldPassword"
         android:inputType="textPassword"
         android:textColor="@color/textColorforEdit"
         app:layout_constraintEnd_toEndOf="parent"
@@ -118,7 +118,7 @@
         android:layout_marginTop="8dp"
         android:background="@drawable/formatos"
         android:ems="10"
-        android:hint="Nova Senha"
+        android:hint="@string/hintNewPassword"
         android:inputType="textPassword"
         android:textColor="@color/textColorforEdit"
         app:layout_constraintEnd_toEndOf="parent"
@@ -136,7 +136,7 @@
         android:layout_marginTop="8dp"
         android:background="@drawable/formatos"
         android:ems="10"
-        android:hint="Repita a Nova Senha"
+        android:hint="@string/hintRepeatNewPassword"
         android:inputType="textPassword"
         android:textColor="@color/textColorforEdit"
         app:layout_constraintEnd_toEndOf="parent"
@@ -153,7 +153,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
-        android:text="Salvar"
+        android:text="@string/btn_save"
         android:theme="@style/botaoInterno"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

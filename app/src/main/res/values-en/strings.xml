@@ -1,0 +1,127 @@
+<resources>
+    
+    <string name="app_name">CriptoReal</string>
+    <string name="app_noTitle"></string>
+    <string name="tabTitle1">HOME</string>
+    <string name="tabTitle2">CONVERTER</string>
+    <string name="tabTitle3">CLASSROOM</string>
+    <string name="btn_register">Register</string>
+    <string name="btn_validate">Validate</string>
+    <string name="btn_confirm">Confirm</string>
+    <string name="btn_submit">Submit</string>
+    <string name="btn_log">log into</string>
+    <string name="btn_save">Save</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="btn_change">Change</string>
+    <string name="btn_result">Result</string>
+    <string name="btn_convert">Convert</string>
+    <string name="texto_cadastre">No account yet? Register</string>
+    <string name="text_userName">Username</string>
+    <string name="item_leave">Leave</string>
+    <string name="item_account">Edit Account</string>
+    <string name="item_config">Settings</string>
+    <string name="navigation_drawer_open">Open</string>
+    <string name="navigation_drawer_close">Close</string>
+    <string name="item_problem">Report a problem</string>
+    <string name="item_politics">Privacy Policy</string>
+    <string name="item_people">Invite People</string>
+    <string name="item_delete">Close Account</string>
+    <string name="facebook_app_id">1137645059731968</string>
+    <string name="facebook_login_procol_sheme">fb1137645059731968</string>
+    <string name="url_politicas">"https://criptoreal.000webhostapp.com/site/index.html"</string>
+    <string name="app_Regulation">I declare for the proper purposes that I have read and fully agree with the Regulations of the CriptoReal.</string>
+    <string name="status">Wait are checking ...</string>
+    <string name="sex">Sex:</string>
+    <string name="sexMale">Male</string>
+    <string name="sexFemale">Female</string>
+    <string name="time">00:00</string>
+
+    
+    <string name="hintOldPassword">Current password</string>
+    <string name="hintNewPassword">New password</string>
+    <string name="hintRepeatNewPassword">Repeat the new password</string>
+    <string name="hintTextEmail">Type your e-mail</string>
+    <string name="hintTextPassword">Type your password</string>
+    <string name="hintTextName">Type your name</string>
+    <string name="hintTextPasswordAgain">Enter your password again</string>
+    <string name="hintNewEmail">New email</string>
+    
+    <string name="uploadPhoto">Upload photo</string>
+    <string name="takePhoto">Take a picture</string>
+    <string name="removePhoto">Remove Photo</string>
+    <string name="choices">Choose one of the options below !!</string>
+    <string name="uploadPhotoSucess">Photo stored !!</string>
+    <string name="error_uploadPhoto">Could not send this photo!</string>
+    <string name="register_uploadStatus">Photo being stored ...</string>
+
+    
+    <string name="register_terms">I accept the terms before proceeding !!</string>
+    <string name="register_requiredField">Required field</string>
+    <string name="register_allField">Fill out all the fields!</string>
+    <string name="register_wrongPassword">Passwords do not match, try again</string>
+    <string name="register_sucess">Success to register user !!</string>
+    <string name="error_weakPassword">Error: Enter a stronger password, containing more characters and with letters and numbers!</string>
+    <string name="error_register_wrongEmail">Error: The typed email is invalid, enter a new email!</string>
+    <string name="error_register_existingEmail">Error: This email is already in use in the App! Try another !!</string>
+    <string name="error_register_otherError">Error: When registering!</string>
+
+    <string name="permissionsDenied">Permissions Denied</string>
+    <string name="permissionsMessage">To take a photo in the app, you must accept the permissions! If you have denied them, go to the settings of your device and change them again!</string>
+
+    
+    <string name="inviteMessage">Come and see the CryptoReal !!</string>
+    <string name="inviteCreateChooser">Choose an email client</string>
+    <string name="inviteReceiver">Guest Email</string>
+    <string name="inviteMessageBody">Check out the cryptoReal. Use this application to convert crypto coins into real ones and learn how to invest them. Free Download.</string>
+
+    
+
+    <string name="loginEmpty">Enter your password and e-mail to log in !!</string>
+    <string name="loginSucess">Success when you log in!</string>
+    <string name="error_login_wrongPassword">Error: Incorrect password, try again!</string>
+    <string name="error_wrongEmail">Error: E-mail entered does not exist or is disabled.</string>
+    <string name="error_login_otherError">Error signing in!</string>
+    <string name="error_loginFacebook">Authentication failed, please try again.</string>
+
+    
+    <string name="app_EditAccount">Edit Account</string>
+    <string name="app_EditProfile">Edit profile</string>
+    <string name="updateEmailSucess">Email Changed !!</string>
+    <string name="updateEmailMigrateClass">Classes migrated to new email!</string>
+    <string name="editEmail_Message">To change your email you will need to enter your current password.</string>
+    <string name="editAccount_Message">. Please edit your account settings and change your password here. "</string>
+    <string name="error_updateEmail">Error changing E-mail!</string>
+    <string name="error_newPassword">Error: Incorrect Current Password, please try again!</string>
+    <string name="error_validatePassword">Error while validating Password!</string>
+    <string name="error_updateEmailMigrateClass">Error: While taking classes from the old email!</string>
+    <string name="updatePassword">Password Changed !!</string>
+    <string name="error_updatePassword">Error changing password!</string>
+    <string name="error_repeatPassword">New password does not match your retry, try again!</string>
+    <string name="updateSex">Altered Sex!!</string>
+
+
+    
+    <string name="converterMessage">Real / Dollar converter in Crypto-Coins</string>
+    <string name="criptoAppreciation">Valorization of Bitcoin and Ethereum</string>
+    <string name="updateMessage">Updated the</string>
+    <string name="criptoCap">Market Cap -</string>
+    <string name="criptoCirculation">Currencies in Circulation -</string>
+    <string name="criptoLimit">Limit -</string>
+    <string name="criptoDay">- 24 hours</string>
+    <string name="criptoHour">- 1 hour</string>
+    <string name="criptoWeek">- 7 days</string>
+
+    
+    <string name="classroomStudyPainel">Study Panel</string>
+    <string name="classroomModule1">Module . 1</string>
+    <string name="classroomModule2">Module . 2</string>
+    <string name="classroomModule3">Module . 3</string>
+    <string name="classroomProgress">Progress</string>
+    <string name="classroom">Class</string>
+    <string name="classroomDownload">Download PDF</string>
+
+    
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="intro">. Please edit your account settings and change your password here.</string>
+
+</resources>

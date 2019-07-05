@@ -33,7 +33,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:paddingTop="8dp"
-        android:text="Editar Perfil"
+        android:text="@string/app_EditProfile"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textSize="16dp"
         app:layout_constraintBottom_toBottomOf="parent"

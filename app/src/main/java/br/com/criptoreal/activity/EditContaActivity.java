@@ -76,7 +76,7 @@ public class EditContaActivity extends AppCompatActivity {
         imgEditEmail = (ImageView) findViewById(R.id.imgEditEmail);
 
         toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle("Editar Conta");
+        toolbar.setTitle(R.string.app_EditAccount);
         toolbar.setNavigationIcon(R.drawable.ic_action_arrow_left); //a função da seta foi atribuida no AndroidManifest.xml
         setSupportActionBar(toolbar); // metodo de suporte apenas para que funcione normalmente
 
@@ -165,7 +165,7 @@ public class EditContaActivity extends AppCompatActivity {
     }
 
     public void alterarEmail(String email, String senha, final String novoEmail, final String idAntigoEmail){
-        Toast.makeText(EditContaActivity.this, "Aguarde estamos verificando...", Toast.LENGTH_LONG).show();//Colocar barra de loading
+        Toast.makeText(EditContaActivity.this, R.string.status, Toast.LENGTH_LONG).show();//Colocar barra de loading
         ///DEVO COLOCAR O TRATAMENTO DE ERRO APLICADO NO CADASTRO
         autenticacao = ConfiguracaoFirebase.getFirebaseAuth();
         autenticacao.signInWithEmailAndPassword(
@@ -182,7 +182,7 @@ public class EditContaActivity extends AppCompatActivity {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {
                                         if (task.isSuccessful()) {
-                                            Toast.makeText(EditContaActivity.this, "Email Alterado!!", Toast.LENGTH_LONG).show();
+                                            Toast.makeText(EditContaActivity.this, R.string.updateEmailSucess, Toast.LENGTH_LONG).show();
 
                                             String novoIdUsuarioLogado = Base64Custom.codificarBase64(novoEmail);//Repetido em outro método
 
@@ -216,11 +216,11 @@ public class EditContaActivity extends AppCompatActivity {
                                                 throw task.getException();
 
                                             } catch (FirebaseAuthInvalidCredentialsException e) {
-                                                Toast.makeText(EditContaActivity.this, "Erro: O e-mail digitado é invalido, digite um novo e-mail!", Toast.LENGTH_LONG).show();
+                                                Toast.makeText(EditContaActivity.this, R.string.error_register_wrongEmail, Toast.LENGTH_LONG).show();
                                             } catch (FirebaseAuthUserCollisionException e) {
-                                                Toast.makeText(EditContaActivity.this, "Erro: Esse e-mail já está em uso no App! Tente outro!", Toast.LENGTH_LONG).show();
+                                                Toast.makeText(EditContaActivity.this, R.string.error_register_existingEmail, Toast.LENGTH_LONG).show();
                                             } catch (Exception e) {
-                                                Toast.makeText(EditContaActivity.this, "Erro: Ao alterar e-mail!", Toast.LENGTH_LONG).show();
+                                                Toast.makeText(EditContaActivity.this, R.string.error_updateEmail, Toast.LENGTH_LONG).show();
                                                 e.printStackTrace();
                                             }
                                         }
@@ -232,9 +232,9 @@ public class EditContaActivity extends AppCompatActivity {
                         throw task.getException();
 
                     } catch (FirebaseAuthInvalidCredentialsException e) {
-                        Toast.makeText(EditContaActivity.this, "Erro: Senha Atual incorreta, tente novamente!", Toast.LENGTH_LONG).show();
+                        Toast.makeText(EditContaActivity.this, R.string.error_newPassword, Toast.LENGTH_LONG).show();
                     } catch (Exception e) {
-                        Toast.makeText(EditContaActivity.this, "Erro ao validar Senha!", Toast.LENGTH_LONG).show();
+                        Toast.makeText(EditContaActivity.this, R.string.error_validatePassword, Toast.LENGTH_LONG).show();
                         e.printStackTrace();
                     }
                 }
@@ -255,12 +255,12 @@ public class EditContaActivity extends AppCompatActivity {
 
                             ///CONTINUA VINDO COM MODULOS FALSOS
 
-                            Toast.makeText(EditContaActivity.this, "Aulas migradas a novo e-mail!", Toast.LENGTH_LONG).show();
+                            Toast.makeText(EditContaActivity.this, R.string.updateEmailMigrateClass, Toast.LENGTH_LONG).show();
                             Log.i("TESTES","ESTOU DENTRO");
 
 
                         }else{
-                            Toast.makeText(EditContaActivity.this, "Erro: Ao pegar as aulas do antigo e-mail!", Toast.LENGTH_LONG).show();
+                            Toast.makeText(EditContaActivity.this, R.string.error_updateEmailMigrateClass, Toast.LENGTH_LONG).show();
                         }
                         ConfiguracaoFirebase.getFireBase().child("aulas").child(antigoPath.getKey()).removeValue();
                         Log.i("TESTES", "ESTOU Excluindo AULA");
@@ -286,14 +286,14 @@ public class EditContaActivity extends AppCompatActivity {
 
         //Recuperar foto e nome do UsuarioLogado
         String nomeUsuario = preferencias.getNome();
-        textNomeUsuario.setText(nomeUsuario + ". Edite suas configurações de conta e altere sua senha aqui.");
+        textNomeUsuario.setText(nomeUsuario + R.string.editAccount_Message);
 
         emailUsuarioLogado = Base64Custom.decodificarBase64(preferencias.getIdentificador());
         email.setText(emailUsuarioLogado);
 
         try{
         String sexo = preferencias.getSexo();
-        if (sexo.equals("Masculino")) {
+        if (sexo.equals(R.string.sexMale)) {
             RadioButton radioMasc = (RadioButton) findViewById(R.id.radioBtnMasculino);
             radioMasc.toggle();
         } else {
@@ -309,7 +309,8 @@ public class EditContaActivity extends AppCompatActivity {
     }
 
     public void alterarSenha() {
-        Toast.makeText(EditContaActivity.this, "Aguarde estamos verificando...", Toast.LENGTH_LONG).show();//Colocar barra de loading
+        Toast.makeText(EditContaActivity.this, R.string.status
+                , Toast.LENGTH_LONG).show();//Colocar barra de loading
         ///DEVO COLOCAR O TRATAMENTO DE ERRO APLICADO NO CADASTRO
         autenticacao = ConfiguracaoFirebase.getFirebaseAuth();
         autenticacao.signInWithEmailAndPassword(
@@ -331,7 +332,7 @@ public class EditContaActivity extends AppCompatActivity {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {
                                         if (task.isSuccessful()) {
-                                            Toast.makeText(EditContaActivity.this, "Senha Alterada!!", Toast.LENGTH_LONG).show();
+                                            Toast.makeText(EditContaActivity.this, R.string.updatePassword, Toast.LENGTH_LONG).show();
 
                                             abrirTelaPrincipal();
                                         }else{
@@ -339,9 +340,9 @@ public class EditContaActivity extends AppCompatActivity {
                                                 throw task.getException();
 
                                             }catch (FirebaseAuthWeakPasswordException e){
-                                                Toast.makeText(EditContaActivity.this, "Erro: Digite uma senha mais forte, contendo mais caracteres e com letras e números!", Toast.LENGTH_LONG).show();
+                                                Toast.makeText(EditContaActivity.this, R.string.error_weakPassword, Toast.LENGTH_LONG).show();
                                             }catch (Exception e) {
-                                                Toast.makeText(EditContaActivity.this, "Erro: Ao efetuar o cadastro!", Toast.LENGTH_LONG).show();
+                                                Toast.makeText(EditContaActivity.this, R.string.error_updatePassword, Toast.LENGTH_LONG).show();
                                                 e.printStackTrace();
                                             }
                                         }
@@ -349,7 +350,7 @@ public class EditContaActivity extends AppCompatActivity {
                                 });
 
                     }else{
-                            Toast.makeText(EditContaActivity.this, "A nova senha não condiz com sua repetição, tente novamente !", Toast.LENGTH_LONG).show();
+                            Toast.makeText(EditContaActivity.this, R.string.error_repeatPassword, Toast.LENGTH_LONG).show();
                         novaSenha.setText("");//apaga senha digitada
                         confsenha.setText("");
                     }
@@ -359,13 +360,13 @@ public class EditContaActivity extends AppCompatActivity {
                         throw task.getException();
 
                     } catch (FirebaseAuthInvalidUserException e) { //Impossível acontecer?
-                        Toast.makeText(EditContaActivity.this, "Erro: O e-mail informado não existe ou está desativado", Toast.LENGTH_LONG).show();
+                        Toast.makeText(EditContaActivity.this, R.string.error_wrongEmail, Toast.LENGTH_LONG).show();
                         senhaAtual.setText("");//apaga senha digitada
                     } catch (FirebaseAuthInvalidCredentialsException e) {
-                        Toast.makeText(EditContaActivity.this, "Erro: Senha Atual incorreta, tente novamente!", Toast.LENGTH_LONG).show();
+                        Toast.makeText(EditContaActivity.this, R.string.error_newPassword, Toast.LENGTH_LONG).show();
                         senhaAtual.setText("");//apaga senha digitada
                     } catch (Exception e) {
-                        Toast.makeText(EditContaActivity.this, "Erro ao validar Senha!", Toast.LENGTH_LONG).show();
+                        Toast.makeText(EditContaActivity.this, R.string.error_validatePassword, Toast.LENGTH_LONG).show();
                         senhaAtual.setText("");//apaga senha digitada
                         e.printStackTrace();
                     }
@@ -391,7 +392,7 @@ public class EditContaActivity extends AppCompatActivity {
         Log.i("Tratando Foto","Veja como ficou as preferencias" + preferencias.getIdentificador() + preferencias.getNome() + preferencias.getFotoPerfil() + preferencias.getSexo());
         Log.i("Tratando Foto","Veja como ficou o usuario" + usuario.getId() + usuario.getNome() + usuario.getEnderecofoto());
 
-        Toast.makeText(EditContaActivity.this, "Sexo Alterado!!", Toast.LENGTH_LONG).show();
+        Toast.makeText(EditContaActivity.this, R.string.updateSex, Toast.LENGTH_LONG).show();
         abrirTelaPrincipal();
     }
 

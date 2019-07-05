@@ -3,9 +3,6 @@ package br.com.criptoreal.Adapter;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import android.view.ViewGroup;
-
-import java.util.HashMap;
 
 import br.com.criptoreal.fragment.InicioFragment;
 import br.com.criptoreal.fragment.ConversorFragment;
@@ -13,10 +10,11 @@ import br.com.criptoreal.fragment.EstudoFragment;
 
 public class TabAdapter extends FragmentStatePagerAdapter{ // Com essa classe em extends temos um melhor aproveitamento de memoria
 
-    private String[] tituloAbas = {"INICIO","CONVERSOR","ESTUDOS"};
+    private String[] tituloAbas;
 
-    public TabAdapter(FragmentManager fm) {
+    public TabAdapter(FragmentManager fm, String[] tituloAbas) {
         super(fm);
+        this.tituloAbas = tituloAbas;
     }
 
     @Override
@@ -45,4 +43,6 @@ public class TabAdapter extends FragmentStatePagerAdapter{ // Com essa classe em
     public CharSequence getPageTitle(int position) {//Recupera os títulos de cada uma das abas
         return tituloAbas[position];
     }
+
+
 }

@@ -29,7 +29,7 @@
             android:name=".activity.MainActivity"
             android:label="@string/app_noTitle" />
         <activity
-            android:name=".activity.CadastroUsuarioActivity"
+            android:name=".activity.UserRegisterActivity"
             android:windowSoftInputMode="adjustPan" />
         <activity android:name=".activity.EditPerfilActivity" />
         <activity
@@ -40,7 +40,7 @@
                 android:value=".activity.MainActivity" />
         </activity>
         <activity android:name=".activity.PoliticasActivity" />
-        <activity android:name=".activity.ConvidarActivity">
+        <activity android:name=".activity.InviteActivity">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>

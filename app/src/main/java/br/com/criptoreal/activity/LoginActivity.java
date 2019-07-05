@@ -1,14 +1,11 @@
 package br.com.criptoreal.activity;
 
 import android.annotation.SuppressLint;
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
-import android.net.Uri;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Base64;
@@ -36,13 +33,10 @@ import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthInvalidUserException;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.storage.StorageReference;
-import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -57,7 +51,6 @@ import br.com.criptoreal.Model.Usuario;
 import br.com.criptoreal.R;
 import br.com.criptoreal.config.ConfiguracaoFirebase;
 import br.com.criptoreal.helper.Base64Custom;
-import br.com.criptoreal.helper.Constantes;
 import br.com.criptoreal.helper.Preferencias;
 
 public class LoginActivity extends AppCompatActivity {
@@ -103,7 +96,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(email.getText().length() == 0 || senha.getText().length() == 0){
-                    Toast.makeText(LoginActivity.this, "Informe sua senha e e-mail para poder logar!!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginActivity.this, R.string.loginEmpty, Toast.LENGTH_LONG).show();
 
                 }else{
                     usuario = new Usuario();
@@ -157,7 +150,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void validarLogin(){
-        Toast.makeText(LoginActivity.this,"Aguarde estamos verificando...",Toast.LENGTH_LONG).show();
+        Toast.makeText(LoginActivity.this,R.string.status,Toast.LENGTH_LONG).show();
         //Colocar barra de loading
 
         autenticacao = ConfiguracaoFirebase.getFirebaseAuth();
@@ -196,20 +189,20 @@ public class LoginActivity extends AppCompatActivity {
                     databasefirebaseRef.addListenerForSingleValueEvent(valueEventListenerUsuario);
 
 
-                    Toast.makeText(LoginActivity.this, "Sucesso ao fazer login!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginActivity.this, R.string.loginSucess, Toast.LENGTH_LONG).show();
 
                 }else{
                     try{
                         throw task.getException();
 
                     }catch (FirebaseAuthInvalidUserException e) {
-                        Toast.makeText(LoginActivity.this, "Erro: O e-mail informado não existe ou está desativado", Toast.LENGTH_LONG).show();
+                        Toast.makeText(LoginActivity.this, R.string.error_wrongEmail, Toast.LENGTH_LONG).show();
                         senha.setText("");//apaga senha digitada
                     }catch (FirebaseAuthInvalidCredentialsException e) {
-                        Toast.makeText(LoginActivity.this, "Erro: Senha incorreta, tente novamente!", Toast.LENGTH_LONG).show();
+                        Toast.makeText(LoginActivity.this, R.string.error_login_wrongPassword, Toast.LENGTH_LONG).show();
                         senha.setText("");//apaga senha digitada
                    }catch (Exception e) {
-                        Toast.makeText(LoginActivity.this, "Erro ao fazer login!", Toast.LENGTH_LONG).show();
+                        Toast.makeText(LoginActivity.this, R.string.error_login_otherError, Toast.LENGTH_LONG).show();
                         senha.setText("");//apaga senha digitada
                         e.printStackTrace();
                     }
@@ -220,7 +213,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void abrirCadastroUsuario(View view){
-        Intent intent = new Intent(LoginActivity.this, CadastroUsuarioActivity.class);
+        Intent intent = new Intent(LoginActivity.this, UserRegisterActivity.class);
         startActivity(intent);
 
     }
@@ -255,7 +248,7 @@ public class LoginActivity extends AppCompatActivity {
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w("FACELOG", "signInWithCredential:failure", task.getException());
-                            Toast.makeText(LoginActivity.this, "Autenticação falhou, tente novamente.",
+                            Toast.makeText(LoginActivity.this, R.string.error_loginFacebook,
                                     Toast.LENGTH_SHORT).show();
 
                         }

@@ -28,7 +28,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Aula"
+        android:text="@string/classroom"
         android:textColor="@color/textColorPrimary"
         android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/iconeTextoPadrao"
@@ -55,7 +55,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Baixar PDF"
+        android:text="@string/classroomDownload"
         android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/iconeTextoPadrao"
         app:layout_constraintTop_toBottomOf="@+id/txtAula" />

@@ -2,7 +2,6 @@ package br.com.criptoreal.activity;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
-import android.app.ProgressDialog;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -10,16 +9,11 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.net.Uri;
-import android.os.Build;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
-import android.support.constraint.ConstraintLayout;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.webkit.WebChromeClient;
@@ -68,7 +62,7 @@ import static br.com.criptoreal.helper.Constantes.URL_POLITICAS_PRIVACIDADE;
  * Classe responsável por todas as etapas do formulário de cadastro.
  * @author Arthur Sales
  */
-public class CadastroUsuarioActivity extends AppCompatActivity implements View.OnClickListener{
+public class UserRegisterActivity extends AppCompatActivity implements View.OnClickListener{
 
     //Constante para rastrear a intent do seletor de imagens
     private static final int PICK_IMAGE_REQUEST = 234;//REQUEST necessário para pegar a foto, porém seu valor pode ser qualquer número.
@@ -110,9 +104,9 @@ public class CadastroUsuarioActivity extends AppCompatActivity implements View.O
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cadastro_usuario);
+        setContentView(R.layout.activity_user_register);
 
-        preferencias = new Preferencias(CadastroUsuarioActivity.this);
+        preferencias = new Preferencias(UserRegisterActivity.this);
         storageFirebaseRef = ConfiguracaoFirebase.getStorageRef();
 
     nome = (EditText) findViewById(R.id.editcadastronome);
@@ -126,7 +120,7 @@ public class CadastroUsuarioActivity extends AppCompatActivity implements View.O
     //cpf = (EditText) findViewById(R.id.editcadastrocpf);
     radioGroup = (RadioGroup) findViewById(R.id.radioGroupSexo);
     foto = (CircleImageView) findViewById(R.id.imgNovaFoto);
-    Picasso.with(CadastroUsuarioActivity.this).load(Constantes.ENDERECO_FOTO_PADRAO).into(foto);
+    Picasso.with(UserRegisterActivity.this).load(Constantes.ENDERECO_FOTO_PADRAO).into(foto);
 
     botaoCadastrar.setOnClickListener(new View.OnClickListener() {
         @Override
@@ -152,7 +146,7 @@ public class CadastroUsuarioActivity extends AppCompatActivity implements View.O
             verificaCampoObrigatorio();
 
         }else{
-                Toast.makeText(getApplicationContext(), "Aceito os termos antes de prosseguir !!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), R.string.register_terms, Toast.LENGTH_SHORT).show();
             }
         }
     });
@@ -197,22 +191,22 @@ public class CadastroUsuarioActivity extends AppCompatActivity implements View.O
             if(usuario.getSenha().equals(usuario.getConfsenha())) {
              cadastrarUsuario();
             }else{
-                Toast.makeText(CadastroUsuarioActivity.this, "As senhas não condizem, tente novamente", Toast.LENGTH_LONG).show();
+                Toast.makeText(UserRegisterActivity.this, R.string.register_wrongPassword, Toast.LENGTH_LONG).show();
             }
 
         }else{
-            Toast.makeText(CadastroUsuarioActivity.this, "Preencha todos os campos!", Toast.LENGTH_LONG).show();
+            Toast.makeText(UserRegisterActivity.this, R.string.register_allField, Toast.LENGTH_LONG).show();
             if(nome.getText().length() == 0){
-                nome.setError("Campo Obrigatório");
+                nome.setError(getString(R.string.register_requiredField));
             }
             if(email.getText().length() == 0){
-                email.setError("Campo Obrigatório");
+                email.setError(getString(R.string.register_requiredField));
             }
             if(senha.getText().length() == 0){
-                senha.setError("Campo Obrigatório");
+                senha.setError(getString(R.string.register_requiredField));
             }
             if(confsenha.getText().length() == 0){
-                confsenha.setError("Campo Obrigatório");
+                confsenha.setError(getString(R.string.register_requiredField));
             }
         }
     }
@@ -236,7 +230,7 @@ public class CadastroUsuarioActivity extends AppCompatActivity implements View.O
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
-                        Toast.makeText(getApplicationContext(), "Sucesso ao cadastrar foto do usuário!!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), R.string.uploadPhotoSucess, Toast.LENGTH_SHORT).show();
 
                         //pegando o endereço da foto no Storage
                         usuario.setEnderecofoto(taskSnapshot.getDownloadUrl().toString());
@@ -252,13 +246,13 @@ public class CadastroUsuarioActivity extends AppCompatActivity implements View.O
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(getApplicationContext(), "Não foi possível enviar esta foto!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), R.string.error_uploadPhoto, Toast.LENGTH_SHORT).show();
                     }
                 })
                 .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
                     @Override
                     public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
-                        Toast.makeText(getApplicationContext(), "Foto sendo armazenada...", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), R.string.register_uploadStatus, Toast.LENGTH_SHORT).show();
 
                         /*
                         //O que ocorre durante o Upload
@@ -279,7 +273,7 @@ public class CadastroUsuarioActivity extends AppCompatActivity implements View.O
             autenticacao.createUserWithEmailAndPassword(
                     usuario.getEmail(),
                     usuario.getSenha()
-            ).addOnCompleteListener(CadastroUsuarioActivity.this, new OnCompleteListener<AuthResult>() {
+            ).addOnCompleteListener(UserRegisterActivity.this, new OnCompleteListener<AuthResult>() {
                 @SuppressLint("RestrictedApi")
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
@@ -300,7 +294,7 @@ public class CadastroUsuarioActivity extends AppCompatActivity implements View.O
                                 usuario.salvar();
                             }
 
-                            Toast.makeText(CadastroUsuarioActivity.this, "Sucesso ao cadastrar usuario!!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(UserRegisterActivity.this, R.string.register_sucess, Toast.LENGTH_SHORT).show();
                             finish(); //Encerra a Activity, voltando para a tela de Login
 
 
@@ -310,13 +304,13 @@ public class CadastroUsuarioActivity extends AppCompatActivity implements View.O
                             throw task.getException();
 
                         }catch(FirebaseAuthWeakPasswordException e){
-                            Toast.makeText(CadastroUsuarioActivity.this, "Erro: Digite uma senha mais forte, contendo mais caracteres e com letras e números!", Toast.LENGTH_LONG).show();
+                            Toast.makeText(UserRegisterActivity.this, R.string.error_weakPassword, Toast.LENGTH_LONG).show();
                         }catch(FirebaseAuthInvalidCredentialsException e){
-                            Toast.makeText(CadastroUsuarioActivity.this, "Erro: O e-mail digitado é invalido, digite um novo e-mail!", Toast.LENGTH_LONG).show();
+                            Toast.makeText(UserRegisterActivity.this, R.string.error_register_wrongEmail, Toast.LENGTH_LONG).show();
                         }catch(FirebaseAuthUserCollisionException e){
-                            Toast.makeText(CadastroUsuarioActivity.this, "Erro: Esse e-mail já está em uso no App!", Toast.LENGTH_LONG).show();
+                            Toast.makeText(UserRegisterActivity.this, R.string.error_register_existingEmail, Toast.LENGTH_LONG).show();
                         }catch(Exception e){
-                            Toast.makeText(CadastroUsuarioActivity.this, "Erro: Ao efetuar o cadastro!", Toast.LENGTH_LONG).show();
+                            Toast.makeText(UserRegisterActivity.this, R.string.error_register_otherError, Toast.LENGTH_LONG).show();
                             e.printStackTrace();
                         }
 
@@ -420,10 +414,10 @@ public class CadastroUsuarioActivity extends AppCompatActivity implements View.O
      */
     public void alertaValidacaoPermissao(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Permissões Negadas");
-        builder.setMessage("Para tirar foto pelo app, é necessário aceitar as permissões! Caso as tenha negado deve ir na configurações de seu dispositivo e altera-las novamente!");
+        builder.setTitle(R.string.permissionsDenied);
+        builder.setMessage(R.string.permissionsMessage);
 
-        builder.setPositiveButton("CONFIRMAR", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton(R.string.btn_confirm, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 finish();

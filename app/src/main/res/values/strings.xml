@@ -1,22 +1,124 @@
 <resources>
+    <!-- Base -->
     <string name="app_name">CriptoReal</string>
     <string name="app_noTitle"></string>
-    <string name="botao_cadastrar">Cadastrar</string>
-    <string name="botao_validar">Validar</string>
-    <string name="btn_logar">Logar</string>
+    <string name="tabTitle1">INICIO</string>
+    <string name="tabTitle2">CONVERSOR</string>
+    <string name="tabTitle3">ESTUDOS</string>
+    <string name="btn_register">Cadastrar</string>
+    <string name="btn_validate">Validar</string>
+    <string name="btn_confirm">Confirmar</string>
+    <string name="btn_submit">Enviar</string>
+    <string name="btn_log">Logar</string>
+    <string name="btn_save">Salvar</string>
+    <string name="btn_cancel">Cancelar</string>
+    <string name="btn_change">Alterar</string>
+    <string name="btn_result">Resultado</string>
+    <string name="btn_convert">Converter</string>
     <string name="texto_cadastre">Não tem conta? Cadastre-se</string>
-    <string name="item_sair">Sair</string>
-    <string name="item_conta">Editar Conta</string>
+    <string name="text_userName">Nome do Usuario</string>
+    <string name="item_leave">Sair</string>
+    <string name="item_account">Editar Conta</string>
     <string name="item_config">Configurações</string>
     <string name="navigation_drawer_open">Abrir</string>
     <string name="navigation_drawer_close">Fechar</string>
-    <string name="item_problema">Relatar um Problema</string>
-    <string name="item_politica">Politica de privacidade</string>
-    <string name="item_pessoas">Convidar Pessoas</string>
-    <string name="item_encerrar">Encerrar Conta</string>
+    <string name="item_problem">Relatar um Problema</string>
+    <string name="item_politics">Politica de privacidade</string>
+    <string name="item_people">Convidar Pessoas</string>
+    <string name="item_delete">Encerrar Conta</string>
     <string name="facebook_app_id">1137645059731968</string>
     <string name="facebook_login_procol_sheme">fb1137645059731968</string>
     <string name="url_politicas">"https://criptoreal.000webhostapp.com/site/index.html"</string>
+    <string name="app_Regulation">Declaro para os devidos fins que li e concordo integralmente com o Regulamento do Cripto Real.</string>
+    <string name="status">Aguarde estamos verificando...</string>
+    <string name="sex">Sexo:</string>
+    <string name="sexMale">Masculino</string>
+    <string name="sexFemale">Feminino</string>
+    <string name="time">00:00</string>
+
+    <!-- Hint -->
+    <string name="hintOldPassword">Senha Atual</string>
+    <string name="hintNewPassword">Nova Senha</string>
+    <string name="hintRepeatNewPassword">Repita a Nova Senha</string>
+    <string name="hintTextEmail">Digite seu e-mail</string>
+    <string name="hintTextPassword">Digite sua Senha</string>
+    <string name="hintTextName">Digite seu Nome</string>
+    <string name="hintTextPasswordAgain">Digite sua senha novamente</string>
+    <string name="hintNewEmail">Novo E-mail</string>
+    <!-- Photo -->
+    <string name="uploadPhoto">Carregar foto</string>
+    <string name="takePhoto">Tirar foto</string>
+    <string name="removePhoto">Remover Foto</string>
+    <string name="choices">Escolha uma das opções abaixo!!</string>
+    <string name="uploadPhotoSucess">Foto armazenada!!</string>
+    <string name="error_uploadPhoto">Não foi possível enviar esta foto!</string>
+    <string name="register_uploadStatus">Foto sendo armazenada...</string>
+
+    <!-- UserRegisterActivity -->
+    <string name="register_terms">Aceito os termos antes de prosseguir !!</string>
+    <string name="register_requiredField">Campo Obrigatório</string>
+    <string name="register_allField">Preencha todos os campos!</string>
+    <string name="register_wrongPassword">As senhas não condizem, tente novamente</string>
+    <string name="register_sucess">Sucesso ao cadastrar usuario!!</string>
+    <string name="error_weakPassword">Erro: Digite uma senha mais forte, contendo mais caracteres e com letras e números!</string>
+    <string name="error_register_wrongEmail">Erro: O e-mail digitado é invalido, digite um novo e-mail!</string>
+    <string name="error_register_existingEmail">Erro: Esse e-mail já está em uso no App! Tente outro!!</string>
+    <string name="error_register_otherError">Erro: Ao efetuar o cadastro!</string>
+
+    <string name="permissionsDenied">Permissões Negadas</string>
+    <string name="permissionsMessage">Para tirar foto pelo app, é necessário aceitar as permissões! Caso as tenha negado deve ir na configurações de seu dispositivo e altera-las novamente!</string>
+
+    <!-- InviteActivity -->
+    <string name="inviteMessage">Venha conhecer o CriptoReal!!</string>
+    <string name="inviteCreateChooser">Escolha um cliente de email</string>
+    <string name="inviteReceiver">Email do convidado</string>
+    <string name="inviteMessageBody">Confira o criptoReal. Use este aplicativo para converter criptomoedas em real e aprender sobre como investi-las. Baixe Gratis.</string>
+
+    <!-- LoginActivity -->
+
+    <string name="loginEmpty">Informe sua senha e e-mail para poder logar!!</string>
+    <string name="loginSucess">Sucesso ao fazer login!</string>
+    <string name="error_login_wrongPassword">Erro: Senha incorreta, tente novamente!</string>
+    <string name="error_wrongEmail">Erro: O e-mail informado não existe ou está desativado.</string>
+    <string name="error_login_otherError">Erro ao fazer login!</string>
+    <string name="error_loginFacebook">Autenticação falhou, tente novamente.</string>
+
+    <!-- EditAccountActivity -->
+    <string name="app_EditAccount">Editar Conta</string>
+    <string name="app_EditProfile">Editar Perfil</string>
+    <string name="updateEmailSucess">Email Alterado!!</string>
+    <string name="updateEmailMigrateClass">Aulas migradas a novo e-mail!</string>
+    <string name="editEmail_Message">Para alterar o seu e-mail será necessário informar sua senha atual.</string>
+    <string name="editAccount_Message">. Edite suas configurações de conta e altere sua senha aqui."</string>
+    <string name="error_updateEmail">Erro ao alterar E-mail!</string>
+    <string name="error_newPassword">Erro: Senha Atual incorreta, tente novamente!</string>
+    <string name="error_validatePassword">Erro ao validar Senha!</string>
+    <string name="error_updateEmailMigrateClass">Erro: Ao pegar as aulas do antigo e-mail!</string>
+    <string name="updatePassword">Senha Alterada!!</string>
+    <string name="error_updatePassword">Erro ao alterar a senha!</string>
+    <string name="error_repeatPassword">A nova senha não condiz com sua repetição, tente novamente!</string>
+    <string name="updateSex">Sexo Alterado!!</string>
+
+
+    <!--Cripto -->
+    <string name="converterMessage">Conversor de Real/Dolar em criptomoedas</string>
+    <string name="criptoAppreciation">Valorização do Bitcoin e Ethereum</string>
+    <string name="updateMessage">Atualizado as</string>
+    <string name="criptoCap">Cap. Mercado - </string>
+    <string name="criptoCirculation">Moedas em Circulação - </string>
+    <string name="criptoLimit">Limite - </string>
+    <string name="criptoDay">- 24 horas</string>
+    <string name="criptoHour">- 1 hora</string>
+    <string name="criptoWeek">- 7 dias</string>
+
+    <!--Class-->
+    <string name="classroomStudyPainel">Painel de Estudo</string>
+    <string name="classroomModule1">Módulo . 1</string>
+    <string name="classroomModule2">Módulo . 2</string>
+    <string name="classroomModule3">Módulo . 3</string>
+    <string name="classroomProgress">Progresso</string>
+    <string name="classroom">Aula</string>
+    <string name="classroomDownload">Baixar PDF</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

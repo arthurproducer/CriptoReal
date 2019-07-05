@@ -8,21 +8,21 @@
         <item
             android:id="@+id/item_politica"
             android:icon="@drawable/ic_action_document"
-            android:title="@string/item_politica" />
+            android:title="@string/item_politics" />
         <item
             android:id="@+id/item_pessoas"
             android:icon="@drawable/ic_person_add_white"
-            android:title="@string/item_pessoas" />
+            android:title="@string/item_people" />
         <item
             android:id="@+id/item_conta"
             android:icon="@drawable/ic_account_circle"
-            android:title="@string/item_conta" />
+            android:title="@string/item_account" />
     </group>
     <group android:id="@+id/padrao" android:checkableBehavior="none">
         <item
             android:id="@+id/item_sair"
             android:icon="@drawable/ic_action_exit"
-            android:title="@string/item_sair" />
+            android:title="@string/item_leave" />
     </group>
 <!--
       <item

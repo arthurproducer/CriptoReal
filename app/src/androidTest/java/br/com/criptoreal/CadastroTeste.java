@@ -1,28 +1,21 @@
 package br.com.criptoreal;
 
-import android.content.Context;
-import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.storage.StorageReference;
-import com.squareup.picasso.Picasso;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import br.com.criptoreal.Model.Usuario;
-import br.com.criptoreal.activity.CadastroUsuarioActivity;
+import br.com.criptoreal.activity.UserRegisterActivity;
 import br.com.criptoreal.config.ConfiguracaoFirebase;
 import br.com.criptoreal.helper.Base64Custom;
-import br.com.criptoreal.helper.Constantes;
 import br.com.criptoreal.helper.Preferencias;
 
 /**
  * Classe de teste criada para garantir o funcionamento das principais operações
- * durante o cadastro do usuário {@link br.com.criptoreal.activity.CadastroUsuarioActivity }.
+ * durante o cadastro do usuário {@link UserRegisterActivity }.
  * @
  * @author Arthur Sales
  * @date 29/06/2019
@@ -61,8 +54,8 @@ public class CadastroTeste {
                 StorageReference storageFirebaseRef;
                 Preferencias preferencias;
 
-                CadastroUsuarioActivity cadastroUsuarioActivity;
-                cadastroUsuarioActivity = new CadastroUsuarioActivity();
+                UserRegisterActivity userRegisterActivity;
+                userRegisterActivity = new UserRegisterActivity();
 
                 Usuario email = new Usuario();
                 email.setEmail("teste@gmail.com");
@@ -70,7 +63,7 @@ public class CadastroTeste {
                 Usuario usuario = new Usuario(identificadorUsuario,"teste",email.getEmail(),"teste123","teste123","Masculino",null,null);
                 //CHANCE DE GERAR UM NULLPOINTEXCEPTION
 
-                preferencias = new Preferencias(cadastroUsuarioActivity.getApplicationContext());
+                preferencias = new Preferencias(userRegisterActivity.getApplicationContext());
         }
 
 
@@ -86,8 +79,8 @@ public class CadastroTeste {
 
         public void testeCadastro() {
                 /* ========== Montagem do cenário ========== */
-                CadastroUsuarioActivity cadastroUsuarioActivity;
-                cadastroUsuarioActivity = new CadastroUsuarioActivity();
+                UserRegisterActivity userRegisterActivity;
+                userRegisterActivity = new UserRegisterActivity();
 
                 Usuario email = new Usuario();
                 email.setEmail("teste@gmail.com");
@@ -96,7 +89,7 @@ public class CadastroTeste {
                 //CHANCE DE GERAR UM NULLPOINTEXCEPTION
 
                 /* ========== Execução ========== */
-                cadastroUsuarioActivity.verificaCampoObrigatorio();
+                userRegisterActivity.verificaCampoObrigatorio();
 
 
                 /* ========== Verificação ========== */

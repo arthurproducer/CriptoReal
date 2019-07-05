@@ -62,8 +62,6 @@ public class EditPerfilActivity extends AppCompatActivity {
 
     private StorageReference storageFirebaseRef;
 
-    final private CharSequence[]mudandoFoto = {"Tirar Foto","Carregar Foto","Remover Foto"};
-
     //SOLICITAÇÃO DE PERMISSÃO
     private String[] permissoesNecessarias = new String[]{
             Manifest.permission.READ_EXTERNAL_STORAGE,
@@ -77,6 +75,8 @@ public class EditPerfilActivity extends AppCompatActivity {
 
         usuario = new Usuario();
 
+        final CharSequence[] mudandoFoto = {
+                    getString(R.string.takePhoto), getString(R.string.uploadPhoto), getString(R.string.removePhoto)};
 
          imgFotoUsuario = (CircleImageView) findViewById(R.id.imgNovaFoto);
          textNomeUsuario = (EditText) findViewById(R.id.editNovoNome);
@@ -89,7 +89,7 @@ public class EditPerfilActivity extends AppCompatActivity {
                 AlertDialog.Builder dialog = new AlertDialog.Builder(EditPerfilActivity.this);
 
                 //configurar o titulo
-                dialog.setTitle("Escolha uma das opções abaixo!!");
+                dialog.setTitle(R.string.choices);
                 dialog.setItems(mudandoFoto, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -173,7 +173,7 @@ public class EditPerfilActivity extends AppCompatActivity {
                     putFile(filePatch).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                    Toast.makeText(getApplicationContext(), "Foto armazenada!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), R.string.uploadPhotoSucess, Toast.LENGTH_SHORT).show();
 
                     //pegando o endereço da foto no Storage
                     usuario.setEnderecofoto(taskSnapshot.getDownloadUrl().toString());
@@ -185,7 +185,7 @@ public class EditPerfilActivity extends AppCompatActivity {
             }) .addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(getApplicationContext(), "Não foi possível enviar esta foto!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), R.string.error_uploadPhoto, Toast.LENGTH_SHORT).show();
                 }
             });
 
@@ -199,7 +199,7 @@ public class EditPerfilActivity extends AppCompatActivity {
                             putFile(filePatch).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                            Toast.makeText(getApplicationContext(), "Foto armazenada!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), R.string.uploadPhotoSucess, Toast.LENGTH_SHORT).show();
 
                             //pegando o endereço da foto no Storage
                             usuario.setEnderecofoto(taskSnapshot.getDownloadUrl().toString());
@@ -212,7 +212,7 @@ public class EditPerfilActivity extends AppCompatActivity {
                     }) .addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(getApplicationContext(), "Não foi possível enviar esta foto!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), R.string.error_uploadPhoto, Toast.LENGTH_SHORT).show();
                         }
                     });
 
@@ -302,10 +302,10 @@ public class EditPerfilActivity extends AppCompatActivity {
     public void alertaValidacaoPermissao(){
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Permissões Negadas");
-        builder.setMessage("Para tirar foto pelo app, é necessário aceitar as permissões! Caso as tenha negado deve ir na configurações de seu dispositivo e altera-las novamente!");
+        builder.setTitle(R.string.permissionsDenied);
+        builder.setMessage(R.string.permissionsMessage);
 
-        builder.setPositiveButton("CONFIRMAR", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton(R.string.btn_confirm, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 finish();

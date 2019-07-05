@@ -1,6 +1,5 @@
 package br.com.criptoreal.activity;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -10,32 +9,23 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.facebook.login.LoginManager;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 import br.com.criptoreal.Adapter.TabAdapter;
-import br.com.criptoreal.Model.Usuario;
 import br.com.criptoreal.R;
 import br.com.criptoreal.config.ConfiguracaoFirebase;
-import br.com.criptoreal.fragment.InicioFragment;
-import br.com.criptoreal.helper.Base64Custom;
 import br.com.criptoreal.helper.Preferencias;
 import br.com.criptoreal.helper.SlidingTabLayout;
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -82,7 +72,9 @@ public class MainActivity extends AppCompatActivity
         slidingTabLayout.setSelectedIndicatorColors(ContextCompat.getColor(this,R.color.colorAccent)); // A cor que fica abaixo do nome selecionado
 
         //Configurar Adapter
-        TabAdapter tabAdapter = new TabAdapter(getSupportFragmentManager());
+         String[] tituloAbas = {getString(R.string.tabTitle1),
+                 getString(R.string.tabTitle2),getString(R.string.tabTitle3)};
+        TabAdapter tabAdapter = new TabAdapter(getSupportFragmentManager(),tituloAbas);
         viewPager.setAdapter(tabAdapter);// Esse objeto recupera os fragmentos, numero de páginas e os títulos
 
         slidingTabLayout.setViewPager(viewPager);
@@ -150,7 +142,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void abrirConvidarPessoas(){
-        intent = new Intent(MainActivity.this, ConvidarActivity.class);
+        intent = new Intent(MainActivity.this, InviteActivity.class);
         startActivity(intent);
     }
 

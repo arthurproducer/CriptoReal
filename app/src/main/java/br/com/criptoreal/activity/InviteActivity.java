@@ -15,7 +15,7 @@ import br.com.criptoreal.R;
 import br.com.criptoreal.helper.Preferencias;
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class ConvidarActivity extends AppCompatActivity {
+public class InviteActivity extends AppCompatActivity {
 
 
     private EditText emailConvidado;
@@ -26,7 +26,7 @@ public class ConvidarActivity extends AppCompatActivity {
     @SuppressLint("WrongViewCast")
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_convidar);
+        setContentView(R.layout.activity_invite);
 
         exibindoFotoNomeUsuario();
 
@@ -53,14 +53,14 @@ public class ConvidarActivity extends AppCompatActivity {
 
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.putExtra(Intent.EXTRA_EMAIL,recipients);
-        intent.putExtra(Intent.EXTRA_SUBJECT, "Venha conhecer o CriptoReal!!");
+        intent.putExtra(Intent.EXTRA_SUBJECT, R.string.inviteMessage);
         intent.putExtra(Intent.EXTRA_TEXT, message);
         intent.setType("message/rfc822");
-        startActivity(Intent.createChooser(intent, "Escolha um cliente de email"));
+        startActivity(Intent.createChooser(intent, getString(R.string.inviteCreateChooser)));
 
     }
     private void exibindoFotoNomeUsuario(){
-        Preferencias preferencias = new Preferencias(ConvidarActivity.this);
+        Preferencias preferencias = new Preferencias(InviteActivity.this);
         CircleImageView imgFotoUsuario = (CircleImageView) findViewById(R.id.imgFoto);
         TextView textNomeUsuario = (TextView) findViewById(R.id.txtNome);
 
@@ -68,6 +68,6 @@ public class ConvidarActivity extends AppCompatActivity {
         String NomeUsuario = preferencias.getNome();
         textNomeUsuario.setText(NomeUsuario);
         String FotoUsuario = preferencias.getFotoPerfil();
-        Picasso.with(ConvidarActivity.this).load(FotoUsuario).into(imgFotoUsuario);
+        Picasso.with(InviteActivity.this).load(FotoUsuario).into(imgFotoUsuario);
     }
 }

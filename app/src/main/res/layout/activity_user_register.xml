@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/colorPrimary"
-    tools:context="br.com.criptoreal.activity.CadastroUsuarioActivity">
+    tools:context="br.com.criptoreal.activity.UserRegisterActivity">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imgNovaFoto"
@@ -41,7 +41,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="52dp"
         android:onClick="onClick"
-        android:text="Carregue uma foto"
+        android:text="@string/uploadPhoto"
         android:textColor="@color/textColorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imgNovaFoto"
@@ -57,7 +57,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:onClick="onClick"
-        android:text="Tire uma foto"
+        android:text="@string/takePhoto"
         android:textColor="@color/textColorPrimary"
         app:layout_constraintBottom_toTopOf="@+id/editcadastronome"
         app:layout_constraintEnd_toEndOf="parent"
@@ -75,7 +75,7 @@
         android:layout_marginTop="16dp"
         android:background="@drawable/formatos"
         android:ems="10"
-        android:hint="Digite seu nome"
+        android:hint="@string/hintTextName"
         android:inputType="textPersonName"
         android:textColor="@color/textColorforEdit"
         app:layout_constraintEnd_toEndOf="parent"
@@ -94,7 +94,7 @@
         android:layout_marginTop="8dp"
         android:background="@drawable/formatos"
         android:ems="10"
-        android:hint="Digite seu e-mail"
+        android:hint="@string/hintTextEmail"
         android:inputType="textEmailAddress"
         android:textColor="@color/textColorforEdit"
         app:layout_constraintEnd_toEndOf="parent"
@@ -111,7 +111,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Sexo:"
+        android:text="@string/sex"
         android:textColor="@color/textColorPrimary"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/radioGroupSexo"
@@ -136,7 +136,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:buttonTint="@color/divisor"
-            android:text="Feminino"
+            android:text="@string/sexFemale"
             android:textColor="@color/textColorPrimary" />
 
         <RadioButton
@@ -145,7 +145,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:buttonTint="@color/divisor"
-            android:text="Masculino"
+            android:text="@string/sexMale"
             android:textColor="@color/textColorPrimary" />
 
     </RadioGroup>
@@ -161,7 +161,7 @@
         android:layout_marginTop="8dp"
         android:background="@drawable/formatos"
         android:ems="10"
-        android:hint="Digite sua senha"
+        android:hint="@string/hintTextPassword"
         android:inputType="textPassword"
         android:textColor="@color/textColorforEdit"
         app:layout_constraintEnd_toEndOf="parent"
@@ -180,7 +180,7 @@
         android:layout_marginTop="8dp"
         android:background="@drawable/formatos"
         android:ems="10"
-        android:hint="Digite sua senha novamente"
+        android:hint="@string/hintTextPasswordAgain"
         android:inputType="textPassword"
         android:textColor="@color/textColorforEdit"
         app:layout_constraintEnd_toEndOf="parent"
@@ -197,7 +197,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:text="@string/botao_cadastrar"
+        android:text="@string/btn_register"
         android:theme="@style/botaoInterno"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -235,7 +235,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:gravity="center|clip_horizontal"
-        android:text="Declaro para os devidos fins que li e concordo integralmente com o Regulamento do Cripto Real."
+        android:text="@string/app_Regulation"
         android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_Cadastrar"
         app:layout_constraintEnd_toEndOf="parent"
